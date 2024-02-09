@@ -15,6 +15,6 @@ app.get("/api/item/:slug", (req, res) => {
   res.end(`Item: ${slug}`);
 });
 
-app.use(express.static("public"));
+app.use(express.static("../public"));
 
 export default app;
