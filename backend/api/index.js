@@ -17,7 +17,7 @@ app.get("/api/item/:slug", (req, res) => {
   const { slug } = req.params;
   res.end(`Item: ${slug}`);
 });
-console.log(path.join(__dirname, "../public"));
-app.use(express.static(path.join(__dirname, "public")));
+
+app.use(express.static(path.join(__dirname, "frontend")));
 
 export default app;
