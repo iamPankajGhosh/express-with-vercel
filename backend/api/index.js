@@ -1,5 +1,8 @@
 import express from "express";
 import { v4 } from "uuid";
+import path from "path";
+
+const __dirname = path.resolve();
 
 const app = express();
 
@@ -15,6 +18,6 @@ app.get("/api/item/:slug", (req, res) => {
   res.end(`Item: ${slug}`);
 });
 
-app.use(express.static("../public"));
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 export default app;
