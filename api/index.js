@@ -1,5 +1,7 @@
-const app = require("express")();
-const { v4 } = require("uuid");
+import express from "express";
+import { v4 } from "uuid";
+
+const app = express();
 
 app.get("/api", (req, res) => {
   const path = `/api/item/${v4()}`;
@@ -13,4 +15,6 @@ app.get("/api/item/:slug", (req, res) => {
   res.end(`Item: ${slug}`);
 });
 
-module.exports = app;
+app.use(express.static("public"));
+
+export default app;
